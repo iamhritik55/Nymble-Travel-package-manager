@@ -31,18 +31,7 @@ public class Passenger implements PassengerInterface{
     public double getBalance() {
         return balance;
     }
-
-    public boolean addActivity(Activity activity) {
-        if (activities.contains(activity) || !hasSufficientBalance(activity.getCost())) {
-            return false;
-        }
-        
-        double actualPrice = passengerType.applyDiscount(activity.getCost());
-        activities.add(activity);
-        balance -= actualPrice;
-        return true;
-    }
-
+    
     private boolean hasSufficientBalance(double amount) {
         return balance >= amount;
     }
