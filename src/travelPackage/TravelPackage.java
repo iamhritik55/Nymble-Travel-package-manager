@@ -19,7 +19,9 @@ public class TravelPackage implements TravelPackageInterface{
         this.itinerary = itinerary;
         this.passengers = new ArrayList<>();
     }
-
+    /**
+    * Prints Itinerary of the package which includes name of destination and activities at each destination
+    */
     public void printItinerary() {
         System.out.println("Travel Package: " + name);
         for (Destination destination : itinerary) {
@@ -27,7 +29,9 @@ public class TravelPackage implements TravelPackageInterface{
             destination.printActivities();
         }
     }
-
+    /**
+    * Prints list of passengers in the travel package including passenger's name and number
+    */
     public void printPassengerList() {
         System.out.println("Passenger List for " + name);
         System.out.println("Capacity: " + passengerCapacity);
@@ -36,6 +40,9 @@ public class TravelPackage implements TravelPackageInterface{
             System.out.println("- " + passenger.getName() + " (Passenger #" + passenger.getPassengerNumber() + ")");
         }
     }
+    /**
+    * Registers a passenger to the package
+    */
     public boolean addPassenger(Passenger passenger) {
         if (passengers.size() < passengerCapacity) {
             passengers.add(passenger);
@@ -43,10 +50,15 @@ public class TravelPackage implements TravelPackageInterface{
         }
         return false;
     }
-
+    /**
+    * Removes a passenger from the package
+    */
     public void removePassenger(Passenger passenger) {
         passengers.remove(passenger);
     }
+    /**
+    * Prints Available activities in the package for each destination
+    */
     public void printAvailableActivities() {
         System.out.println("Available Activities in Travel Package '" + name + "':");
         for (Destination destination : itinerary) {

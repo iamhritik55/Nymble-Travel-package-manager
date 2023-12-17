@@ -21,12 +21,16 @@ public class Activity implements ActivityInterface{
     public String getName() {
         return name;
     }
-
+    /**
+    * Returns remaining capacity of an activity
+    */
     public int getAvailableSpaces() {
     	int enrolledPassengers = destination.getEnrolledPassengersCount(this);
         return capacity - enrolledPassengers;
     }
-
+    /**
+    * Registers a passenger to the activity
+    */
     public boolean signUpPassenger(Passenger passenger) {
     	if (getAvailableSpaces() > 0 && passenger.payForActivity(this)) {
             destination.addEnrolledPassenger(this, passenger);
@@ -34,7 +38,7 @@ public class Activity implements ActivityInterface{
         }
         return false;
     }
-
+    
 	public String getDescription() {
 		return description;
 	}

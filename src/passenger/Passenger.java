@@ -31,11 +31,15 @@ public class Passenger implements PassengerInterface{
     public double getBalance() {
         return balance;
     }
-    
+    /**
+    * Checks if user's balance is enough to purchase product of given amount
+    */
     private boolean hasSufficientBalance(double amount) {
         return balance >= amount;
     }
-
+    /**
+    * Registers an user for an activity and updates balance
+    */
     public boolean payForActivity(Activity activity) {
         double actualPrice = passengerType.applyDiscount(activity.getCost());
         if (hasSufficientBalance(actualPrice)) {

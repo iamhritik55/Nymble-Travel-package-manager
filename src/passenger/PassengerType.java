@@ -1,6 +1,12 @@
 package passenger;
 
 public enum PassengerType {
+    /**
+    * Types of passengers: 
+    *   Standard: 0% discount on purchases
+    *   Gold: 10% discount on purchases
+    *   Premium: 100% discount on purchases
+    */
     STANDARD(0),
     GOLD(0.1),
     PREMIUM(1);

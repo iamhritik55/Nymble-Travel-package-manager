@@ -33,11 +33,15 @@ public class Destination implements DestinationInterface{
             System.out.println("- " + activity.getName());
         }
     }
-
+    /**
+    * Adds an passenger to a destination's activity
+    */
     public void addEnrolledPassenger(Activity activity, Passenger passenger) {
         enrolledPassengersMap.computeIfAbsent(activity, k -> new ArrayList<>()).add(passenger);
     }
-
+    /**
+    * Returns number of passengers enrolled for an activity at a particular destination
+    */
     public int getEnrolledPassengersCount(Activity activity) {
         return enrolledPassengersMap.getOrDefault(activity, Collections.emptyList()).size();
     }
