@@ -42,7 +42,13 @@ public class Activity implements ActivityInterface{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+    public Destination getDestination() {
+		return destination;
+	}
 
+	public void setDestination(Destination destination) {
+		this.destination = destination;
+	}
 	public double getCost() {
 		return cost;
 	}

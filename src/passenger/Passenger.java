@@ -45,4 +45,26 @@ public class Passenger implements PassengerInterface{
         }
         return false;
     }
+    public void printDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Passenger Number: " + passengerNumber);
+
+        if (balance >= 0) {
+            System.out.println("Balance: " + balance);
+        } else {
+            System.out.println("Balance: Not Applicable");
+        }
+
+        if (!activities.isEmpty()) {
+            System.out.println("Activities signed up for:");
+            for (Activity activity : activities) {
+                System.out.println("- Activity: " + activity.getName());
+                System.out.println("  Destination: " + activity.getDestination().getName());
+                double paidPrice = passengerType.applyDiscount(activity.getCost());
+                System.out.println("  Price Paid: " + paidPrice);
+            }
+        } else {
+            System.out.println("No activities signed up for.");
+        }
+    }
 }
